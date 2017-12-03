@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="pl" ng-app="app" ng-strict-di=""><head><base href="/"><title>Pobieramy się</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="preload" href="assets/background.jpeg" as="image"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette" media="all"><link rel="stylesheet" href="/style.css" media="all"></head><body class="splash"><div class="loading" style="display: block;"></div><div class="background2" style="display: none;"></div><div class="background" style="display: none;"></div><div class="content"><div class="fancy" id="msg">Pobieramy się</div><div class="fancy" id="today">już za</div><div class="fancy" id="days"> </div></div><script>window.onload = function onload(){
+    document.getElementsByClassName('loading')[0].removeAttribute('style');
+    document.getElementsByClassName('background')[0].removeAttribute('style');
+    document.getElementsByClassName('background2')[0].removeAttribute('style');
+};
+var d = new Date(2018, 5, 2, 0);
+var n = new Date();
+var days = Math.max(0,Math.ceil((d-n)/1000/60/60/24));
+if(days === 0){
+    document.getElementById('today').textContent = 'już dzisiaj!'
+} else if(days === 1){
+    document.getElementById('today').textContent='już jutro!';
+} else {
+    document.getElementById('days').textContent=days+' dni';
+}</script></body></html>
